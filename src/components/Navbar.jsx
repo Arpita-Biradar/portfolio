@@ -20,24 +20,27 @@ const Navbar = () => {
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/70 backdrop-blur-lg shadow-lg"
+          ? "bg-white/80 backdrop-blur-md shadow-md"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
         {/* Logo */}
-        <Link
-          to="home"
-          smooth={true}
-          duration={500}
-          offset={-70}
-          className="text-2xl font-bold text-blue-600 cursor-pointer"
-        >
-          Arpita
-        </Link>
+          <Link
+            to="home"
+            smooth={true}
+            duration={500}
+            offset={-70}
+            className="text-3xl font-extrabold cursor-pointer tracking-wide 
+                      bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 
+                      text-transparent bg-clip-text hover:scale-105 transition-transform duration-300"
+          >
+            Arpita<span className="text-gray-900">.</span>
+          </Link>
+
 
         {/* Desktop Menu */}
-        <div className="space-x-6 hidden md:flex">
+        <div className="space-x-8 hidden md:flex">
           {navLinks.map((item) => (
             <Link
               key={item}
@@ -45,12 +48,11 @@ const Navbar = () => {
               smooth={true}
               duration={500}
               offset={-70}
-              className="relative cursor-pointer text-gray-700 hover:text-blue-600 transition group"
-              activeClass="text-blue-600 font-semibold"
               spy={true}
+              activeClass="text-blue-600 font-semibold after:w-full"
+              className="relative cursor-pointer text-gray-700 hover:text-blue-600 transition group after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 group-hover:after:w-full"
             >
               {item.charAt(0).toUpperCase() + item.slice(1)}
-              <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
         </div>
@@ -59,12 +61,12 @@ const Navbar = () => {
         <div className="md:hidden">
           {menuOpen ? (
             <FiX
-              className="text-2xl cursor-pointer text-gray-700"
+              className="text-3xl cursor-pointer text-gray-700"
               onClick={() => setMenuOpen(false)}
             />
           ) : (
             <FiMenu
-              className="text-2xl cursor-pointer text-gray-700"
+              className="text-3xl cursor-pointer text-gray-700"
               onClick={() => setMenuOpen(true)}
             />
           )}
@@ -72,8 +74,12 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-white shadow-lg p-4 space-y-4 text-center">
+      <div
+        className={`md:hidden bg-white shadow-lg overflow-hidden transition-all duration-500 ${
+          menuOpen ? "max-h-60" : "max-h-0"
+        }`}
+      >
+        <div className="p-4 space-y-4 text-center">
           {navLinks.map((item) => (
             <Link
               key={item}
@@ -88,7 +94,7 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
-      )}
+      </div>
     </nav>
   );
 };
