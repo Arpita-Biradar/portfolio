@@ -6,27 +6,37 @@ const projects = [
   {
     title: "Portfolio Website",
     description: "A personal portfolio built with React & Tailwind CSS.",
-    img: "https://via.placeholder.com/400x250",
-    github: "#",
+    img: "/portfolioproject.png", // put this in public folder
+    github: "https://github.com/Arpita-Biradar/portfolio",
     live: "#",
     tech: ["React", "Tailwind CSS", "Framer Motion"],
   },
   {
-    title: "Weather UI Design",
-    description: "A clean weather app UI design with real-time data.",
-    img: "https://via.placeholder.com/400x250",
-    github: "#",
+    title: "Sweet Belem Project",
+    description:
+      "An e-commerce style bakery website showcasing products, cart, and ordering system.",
+    img: "/sweetbelem.png", // put this in public folder
+    github: "https://github.com/Arpita-Biradar/SWEET-BELEM-Delightful-Cake-Website",
     live: "#",
-    tech: ["React", "API", "Tailwind CSS"],
+    tech: ["React", "Tailwind CSS", "E-Commerce"],
   },
   {
     title: "Doctor Appointment System",
     description:
       "Full-stack web app for booking doctor appointments with role-based access.",
-    img: "https://via.placeholder.com/400x250",
+    img: "/doctorproject.png", // put this in public folder
     github: "#",
     live: "#",
     tech: ["React", "Node.js", "MongoDB", "Express"],
+  },
+  {
+    title: "Chatting Application",
+    description:
+      "A real-time chat app similar to WhatsApp, built with Java and WebSocket for instant communication.",
+    img: "chattingapp.png", // put your chat app image in public folder
+    github: "https://github.com/Arpita-Biradar/Chatting-Apllication",
+    live: "#",
+    tech: ["Java", "WebSocket", "Spring Boot", "MongoDB"],
   },
 ];
 
